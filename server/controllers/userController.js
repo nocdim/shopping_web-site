@@ -42,6 +42,10 @@ class UserController {
 
         return res.json({ token })
     }
+    async fetchUsers(req, res) {
+        const users = await User.findAll({where: { role: 'USER' }})
+        return res.json(users)
+    }
 }
 
 

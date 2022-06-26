@@ -6,5 +6,7 @@ const validator = require('../middleware/validator')
 
 // Post запрос на регистрацию пользователя
 router.post('/reg', validator.registration, userController.reg)
+// Get запрос на вывод всех пользователей
+router.get('/', userController.fetchUsers)
 
 module.exports = router
