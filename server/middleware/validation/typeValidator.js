@@ -1,7 +1,7 @@
 const { check } = require('express-validator')
 
 exports.type = [
-    check('name', 'Поле "Название" пустое')
+    check('name', 'Field "Name" is empty...')
         .exists()
         .isLength({ min: 1 })
 ]

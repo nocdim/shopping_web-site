@@ -1,16 +1,16 @@
 const { check } = require('express-validator')
 
 exports.product = [
-    check('typeId', 'Выберите раздел')
+    check('typeId', 'Choose type...')
         .exists()
         .isNumeric(),
-    check('brandId', 'Выберите производителя')
+    check('brandId', 'Choose manufacturer...')
         .exists()
         .isNumeric(),
-    check('name', 'Поле "Название" пустое')
+    check('name', 'Field "Name" is empty...')
         .exists()
         .isLength({ min: 1 }),
-    check('price', 'Поле "Стоимость" неккоректно')
+    check('price', 'Field "Price" is invalid...')
         .exists()
         .isFloat({ min: 0.1, max: 9999999 }),
 ]
