@@ -7,7 +7,7 @@ export const productAPI = createApi({
     endpoints: (build) => ({
         fetchAllProducts: build.query<IProduct[], number>({
             query: (limit: number = 8) => ({
-                url: '/products',
+                url: '/product',
                 params: {
                     _limit: limit
                 }
