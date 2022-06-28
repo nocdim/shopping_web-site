@@ -3,7 +3,7 @@ import { IProduct } from "../models/IProduct"
 
 export const productAPI = createApi({
     reducerPath: 'productAPI',
-    baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:1234/' }),
+    baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:1234/api' }),
     endpoints: (build) => ({
         fetchAllProducts: build.query<IProduct[], number>({
             query: (limit: number = 8) => ({

@@ -4,6 +4,9 @@ const productController = require('../controllers/productController')
 const checkRole = require('../middleware/checkRoleMiddleware')
 const validator = require('../middleware/validation/productValidator')
 
+// GET запрос для вывода продуктов
+router.get('/', productController.get)
+// POST запрос для добавления товара
 router.post('/add', validator.product, productController.add)
 
 module.exports = router
