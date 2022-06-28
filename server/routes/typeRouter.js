@@ -5,7 +5,7 @@ const checkRole = require('../middleware/checkRoleMiddleware')
 const validator = require('../middleware/validation/typeValidator')
 
 // GET запрос для вывода разделов
-router.get('/', typeController.get)
+router.get('/', typeController.getAll)
 // POST запрос для добавления раздела
 router.post('/add', checkRole('ADMIN'), validator.type, typeController.add)
 
