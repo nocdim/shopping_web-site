@@ -1,11 +1,11 @@
 import React from 'react'
-import Container from './styled/NavBar'
+import { Container } from './styled/NavBar'
 
-const NavBar = () => {
+const NavBar: React.FC = () => {
     return (
         <>
             <Container>
-                <button></button>
+
             </Container>
         </>
     )
