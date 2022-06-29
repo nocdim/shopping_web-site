@@ -1,16 +1,19 @@
 import styled from "styled-components"
+import { LOGIN_ROUTE, REGISTRATION_ROUTE } from '../../utils/consts';
 
 interface Props {
-    isOpen: boolean;
+    link?: string,
+    isOpen?: boolean;
 }
 
-const Container = styled.div`
+const Container = styled.div<Props>`
     width: 100%;
     background-color: white;
     padding: 1.5rem 0rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    display: ${({link}) => (link!.indexOf(REGISTRATION_ROUTE) !== -1 || link!.indexOf(LOGIN_ROUTE) !== -1 ? 'none' : 'flex')};
     flex-wrap: wrap;
     border-bottom: 1px solid #0000007f;
 `
