@@ -63,6 +63,7 @@ const Menu = styled.div<Props>`
     @media (max-width: 768px) {
         overflow: hidden;
         flex-direction: column;
+        margin: 1rem 0rem 0rem 0rem;
         width: 100%;
         max-height: ${({ isOpen })=> (isOpen ? "300px" : "0px" )};
         transition: max-height 0.3s ease-in;
