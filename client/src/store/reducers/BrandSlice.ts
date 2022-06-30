@@ -3,13 +3,13 @@ import { IBrand } from "../../models/IBrand";
 import { fetchBrands } from "./ActionCreators";
 
 interface BrandState {
-    users: IBrand[];
+    brands: IBrand[];
     isLoading: boolean;
     error: string;
 }
 
 const initialState = {
-    users: [] as IBrand[],
+    brands: [] as IBrand[],
     isLoading: false,
     error: '',
 }
@@ -25,7 +25,7 @@ export const brandSlice = createSlice({
         [fetchBrands.fulfilled.type]: (state, action: PayloadAction<IBrand[]>) => {
             state.isLoading = false
             state.error = ''
-            state.users = action.payload
+            state.brands = action.payload
         },
         [fetchBrands.rejected.type]: (state, action: PayloadAction<string>) => {
             state.isLoading = false

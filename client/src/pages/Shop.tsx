@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import TypeContainer from '../components/TypeContainer'
 
 const Shop = () => {
   return (
-    <div>Shop</div>
+    <div>
+      <TypeContainer />
+    </div>
   )
 }
 
