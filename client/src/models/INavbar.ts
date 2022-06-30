@@ -1,4 +1,4 @@
-export interface Navbar {
+export interface INavbar {
     link?: string,
     isOpen?: boolean;
 }

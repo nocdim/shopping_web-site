@@ -1,4 +1,4 @@
-export interface InputProps {
+export interface IInput {
     link: string;
     placeholder: string;
     value: string;

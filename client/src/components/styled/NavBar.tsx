@@ -1,8 +1,8 @@
 import styled from "styled-components"
-import { Navbar } from "../../models/INavbar";
+import { INavbar } from "../../models/INavbar";
 import { LOGIN_ROUTE, REGISTRATION_ROUTE } from '../../utils/consts';
 
-const Container = styled.div<Navbar>`
+const Container = styled.div<INavbar>`
     width: 100%;
     background-color: white;
     padding: 1.5rem 0rem;
@@ -54,7 +54,7 @@ const MenuLink = styled.a`
     transition: all 0.3s ease-in;
 `
 
-const Menu = styled.div<Navbar>`
+const Menu = styled.div<INavbar>`
     display: flex;
     justify-content: space-between;
     align-items: center;

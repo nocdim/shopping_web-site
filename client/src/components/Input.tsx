@@ -1,8 +1,8 @@
 import React from 'react'
-import { InputProps } from '../models/IInput'
+import { IInput } from '../models/IInput'
 import { Container, Status, StyledInput } from './styled/Input'
 
-const Input: React.FC<InputProps> = (props: InputProps) => {
+const Input: React.FC<IInput> = (props: IInput) => {
   return (
     <Container>
         <StyledInput 
