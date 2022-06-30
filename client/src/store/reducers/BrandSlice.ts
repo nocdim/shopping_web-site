@@ -1,37 +1,37 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IUser } from "../../models/IUser"
-import { fetchUsers } from "./ActionCreators";
+import { IBrand } from "../../models/IBrand";
+import { fetchBrands } from "./ActionCreators";
 
-interface UserState {
-    users: IUser[];
+interface BrandState {
+    users: IBrand[];
     isLoading: boolean;
     error: string;
 }
 
 const initialState = {
-    users: [] as IUser[],
+    users: [] as IBrand[],
     isLoading: false,
     error: '',
 }
 
-export const userSlice = createSlice({
-    name: 'user',
+export const brandSlice = createSlice({
+    name: 'brand',
     initialState,
     reducers: { },
     extraReducers: {
-        [fetchUsers.pending.type]: (state) => {
+        [fetchBrands.pending.type]: (state) => {
             state.isLoading = true
         },
-        [fetchUsers.fulfilled.type]: (state, action: PayloadAction<IUser[]>) => {
+        [fetchBrands.fulfilled.type]: (state, action: PayloadAction<IBrand[]>) => {
             state.isLoading = false
             state.error = ''
             state.users = action.payload
         },
-        [fetchUsers.rejected.type]: (state, action: PayloadAction<string>) => {
+        [fetchBrands.rejected.type]: (state, action: PayloadAction<string>) => {
             state.isLoading = false
             state.error = action.payload
         },
     }
 })
 
-export default userSlice.reducer
+export default brandSlice.reducer

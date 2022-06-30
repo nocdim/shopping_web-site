@@ -1,27 +1,12 @@
-import { AppDispatch } from "../store";
 import { $authHost, $host } from "./index";
-import jwtDecode from 'jwt-decode';
-import { IUser } from "../../models/IUser";
-import { userSlice } from "./UserSlice";
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { IBrand } from "../../models/IBrand";
 
-// export const fetchUsers = () => async (dispatch: AppDispatch) => {
-//     try {
-//         dispatch(userSlice.actions.usersFetching())
-//         const { data } = await $host.get<IUser[]>('api/user/')
-//         dispatch(userSlice.actions.usersFetchingSuccess(data))
-//     } catch (e) {
-//         if (e instanceof Error) {
-//             dispatch(userSlice.actions.usersFetchingError(e.message))
-//         }
-//     }
-// }
-
-export const fetchUsers = createAsyncThunk(
-    'user/fetchAll',
+export const fetchBrands = createAsyncThunk(
+    'brand/fetchAll',
     async(_, thunkAPI) => {
         try {
-            const { data } = await $host.get<IUser[]>('api/user/')
+            const { data } = await $host.get<IBrand[]>('api/brand/')
             return data
         } catch (e) {
             if (e instanceof Error) {
