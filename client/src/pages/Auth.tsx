@@ -72,9 +72,9 @@ const Auth = () => {
         </button>
         {isLogin 
         ?
-        <h2>If you don't have an account <span onClick={() => navigate(REGISTRATION_ROUTE)}>Register!</span></h2> 
+        <h2>If you don't have an account - <span onClick={() => navigate(REGISTRATION_ROUTE)}>Register!</span></h2> 
         :
-        <h2>Already have an account <span onClick={() => navigate(LOGIN_ROUTE)}>Log in!</span></h2>
+        <h2>Already have an account? <span onClick={() => navigate(LOGIN_ROUTE)}>Log in!</span></h2>
         }
       </Form>
     </Container>
