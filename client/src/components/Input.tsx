@@ -1,13 +1,6 @@
 import React from 'react'
+import { InputProps } from '../models/IInput'
 import { Container, Status, StyledInput } from './styled/Input'
-
-interface InputProps {
-    link: string;
-    placeholder: string;
-    value: string;
-    type: string;
-    onChange: Function;
-}
 
 const Input: React.FC<InputProps> = (props: InputProps) => {
   return (

@@ -12,6 +12,19 @@ const Auth = () => {
   const isLogin = window.location.href.substring(21) === LOGIN_ROUTE
   const navigate = useNavigate()
   let link = window.location.href.substring(21)
+  const proceed = async () => {
+    try {
+      let role
+      let data
+      if (!isLogin) {
+        
+      }
+    } catch (e) {
+      if (e instanceof Error) {
+        alert(e.message)
+      }
+    }
+  }
   return (
     <Container>
       <Form>
@@ -54,7 +67,7 @@ const Auth = () => {
         />
         : <></>
         }
-        <button>
+        <button onClick={proceed}>
           {isLogin ? 'Log in' : 'Create your account'}
         </button>
         {isLogin 
