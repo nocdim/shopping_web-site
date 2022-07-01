@@ -4,7 +4,6 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 700px;
     min-width: 350px;
     height: 50px;
     border: 1px solid #70000067;
@@ -19,6 +18,10 @@ const Container = styled.div`
     &:hover {
         transform: translateX(3px);
         border: 1px solid #ff000067;
+    }
+    @media (max-width: 1000px) {
+        min-width: 150px;
+        font-size: 16px;
     }
 `
 

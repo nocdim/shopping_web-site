@@ -7,6 +7,12 @@ const StyledTypeContainer = styled.div`
     min-height: calc(100vh - 1.5rem);
     top: 125px;
     left: 75px;
+    @media (max-width: 1000px) {
+        top: 250px;
+        left: 50px;
+        position: absolute;
+        min-height: inherit;
+    }
 `
 
 const StyledBrandContainer = styled.div`
@@ -16,6 +22,12 @@ const StyledBrandContainer = styled.div`
     min-height: calc(100vh - 1.5rem);
     top: 125px;
     right: 75px;
+    @media (max-width: 1000px) {
+        top: 250px;
+        right: 50px;
+        position: absolute;
+        min-height: inherit;
+    }
 `
 
 export {

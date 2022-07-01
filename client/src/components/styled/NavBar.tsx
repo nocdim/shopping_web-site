@@ -38,9 +38,9 @@ const Options = styled.div`
         margin-bottom: 4px;
         border-radius: 5px;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 1000px) {
         display: flex;
-        padding: 0rem 1rem
+        padding: 0rem 1rem 0rem 0rem;
     }
 `
 
@@ -59,10 +59,10 @@ const Menu = styled.div<INavbar>`
     justify-content: space-between;
     align-items: center;
     position: relative;
-    @media (max-width: 768px) {
+    @media (max-width: 1000px) {
         overflow: hidden;
         flex-direction: column;
-        margin: 1rem 0rem 0rem 0rem;
+        padding: 1rem 0rem 0rem 0rem;
         width: 100%;
         max-height: ${({ isOpen })=> (isOpen ? "300px" : "0px" )};
         transition: max-height 0.3s ease-in;

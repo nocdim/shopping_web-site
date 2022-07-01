@@ -20,6 +20,10 @@ const Container = styled.div`
         transform: translateX(-3px);
         border: 1px solid #ff000067;
     }
+    @media (max-width: 1000px) {
+        min-width: 150px;
+        font-size: 16px;
+    }
 `
 
 export {
