@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import { IBrand } from '../models/IBrand'
+import { Container } from './styled/BrandItem';
 
 interface BrandItemProps {
   brand: IBrand;
@@ -7,9 +8,9 @@ interface BrandItemProps {
 
 const BrandItem: FC<BrandItemProps> = ({brand}) => {
   return (
-    <div>
+    <Container>
       {brand.name}
-    </div>
+    </Container>
   )
 }
 

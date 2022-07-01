@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import { IType } from '../models/IType'
+import { Container } from './styled/TypeItem';
 
 interface TypeItemProps {
   type: IType;
@@ -7,9 +8,9 @@ interface TypeItemProps {
 
 const TypeItem: FC<TypeItemProps> = ({type}) => {
   return (
-    <div>
+    <Container>
       {type.name}
-    </div>
+    </Container>
   )
 }
 
