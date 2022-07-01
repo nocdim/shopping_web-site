@@ -1,6 +1,7 @@
 import React from 'react'
 import { typeAPI } from '../services/TypeService'
 import Loader from './Loader'
+import { Error } from './styled/LoadingError'
 import TypeItem from './TypeItem'
 
 const TypeContainer = () => {
@@ -8,7 +9,7 @@ const TypeContainer = () => {
   return (
     <div>
       {isLoading && <Loader />}
-      {error && <h1>Loading error...</h1>}
+      {error && <Error>Loading error...</Error>}
       {types && types.map(type =>
         <TypeItem key={type.id} type={type} />  
       )}
