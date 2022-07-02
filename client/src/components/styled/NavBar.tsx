@@ -7,6 +7,7 @@ const Container = styled.div<INavbar>`
     background-color: white;
     padding: 1.5rem 0rem;
     display: flex;
+    position: fixed;
     justify-content: space-between;
     align-items: center;
     display: ${({link}) => (link!.indexOf(REGISTRATION_ROUTE) !== -1 || link!.indexOf(LOGIN_ROUTE) !== -1 ? 'none' : 'flex')};
