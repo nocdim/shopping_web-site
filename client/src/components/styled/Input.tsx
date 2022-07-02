@@ -6,7 +6,6 @@ interface Props {
 
 const StyledInput = styled.input<Props>`
     width: 80%;
-    max-width: 700px;
     min-width: 350px;
     height: 50px;
     border: 1px dashed #70000067;
@@ -46,8 +45,9 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
 `
+
 export {
     StyledInput,
     Status,
-    Container
+    Container,
 }

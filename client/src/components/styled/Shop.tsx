@@ -28,5 +28,5 @@ const StyledBrandContainer = styled.div`
 
 export {
     StyledBrandContainer,
-    StyledTypeContainer
+    StyledTypeContainer,
 }

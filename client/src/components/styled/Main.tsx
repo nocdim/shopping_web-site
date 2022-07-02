@@ -8,7 +8,7 @@ const Container = styled.div`
     padding: 0;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 8rem);
+    height: calc(100vh);
 `
 
 export {

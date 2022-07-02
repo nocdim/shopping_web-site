@@ -7,7 +7,7 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: calc(100vh - 8rem);
+    height: calc(100vh - 2rem);
     span {
         font-size: 30px;
         font-weight: 500;
