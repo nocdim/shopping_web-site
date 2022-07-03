@@ -18,6 +18,30 @@ const Container = styled.div`
         }
     }
 `
+const InfoContainer = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    div {
+        max-width: 700px;
+        min-width: calc(350px + 4rem);
+        height: 60px;
+        border: none;
+        outline: none;
+        font-size: 18px;
+        margin: 1rem 0;
+        box-shadow: 0px 14px 9px -15px rgba(0, 0, 0, 0.25);
+        border-radius: 8px;
+        background-color: #70edb9;
+        color: #505050;
+        cursor: pointer;
+        transition: all 0.2s ease-in;
+        &:hover {
+            transform: translateY(-3px)
+        }
+    }
+`
 
 const Logo = styled.div`
     color: #000000d9;
@@ -64,4 +88,5 @@ export {
     Container,
     Logo,
     Form,
+    InfoContainer,
 }

@@ -18,10 +18,10 @@ class UserController {
         // Проверяем наличие ошибок валидатора
         const validationErrors = validationResult(req)
         if (!validationErrors.isEmpty()) {
-            let warnings = {}
+            let warnings = []
             let countValidationErrors = 1
             for (let errs of validationErrors.array()) {
-                warnings[countValidationErrors++] = errs.msg
+                warnings.push(errs.msg)
             }
             return next(ApiError.badRequest(warnings))
         }
@@ -29,13 +29,13 @@ class UserController {
         const { name, email, password, confirmPass, role } = req.body
 
         if (password !== confirmPass) {
-            return next(ApiError.badRequest({1: 'Passwords do not match...'}))
+            return next(ApiError.badRequest('Passwords do not match...'))
         }
 
         // Проверяем, есть ли уже зарегестрируемый пользователь с таким же email'ом
         const alreadyCreatedUser = await User.findOne({ where: {email} })
         if (alreadyCreatedUser) {
-            return next(ApiError.badRequest({1: 'User with that email has already been registered...'}))
+            return next(ApiError.badRequest('User with that email has already been registered...'))
         }
 
         // Если ошибок и предупреждений нет, то создаем нового пользователя

@@ -24,7 +24,6 @@ const Footer = styled.div`
     padding: 0;
     align-items: center;
     justify-content: center;
-
 `
 
 export {
