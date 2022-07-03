@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Input from '../components/Input'
 import { Container, Form, Logo } from '../components/styled/Auth'
+import { IUser } from '../models/IUser'
+import { userAPI } from '../services/UserService'
 import { LOGIN_ROUTE, MAIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE } from '../utils/consts'
 
 const Auth = () => {
@@ -12,11 +14,14 @@ const Auth = () => {
   const isLogin = window.location.href.substring(21) === LOGIN_ROUTE
   const navigate = useNavigate()
   let link = window.location.href.substring(21)
+  const [createUser, {}] = userAPI.useCreateUserMutation()
   const proceed = async () => {
     try {
       let role
-      let data
       if (!isLogin) {
+        await createUser({name: name, email: email, password: password, confirmPass: confirmPass, role: 'USER'} as IUser)
+      }
+      if (isLogin) {
         
       }
     } catch (e) {

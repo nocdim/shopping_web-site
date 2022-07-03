@@ -2,10 +2,12 @@ import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
 import { brandAPI } from "../services/BrandService";
 import { typeAPI } from "../services/TypeService";
+import { userAPI } from "../services/UserService";
 
 const rootReducer = combineReducers({
     [brandAPI.reducerPath]: brandAPI.reducer,
-    [typeAPI.reducerPath]: typeAPI.reducer
+    [typeAPI.reducerPath]: typeAPI.reducer,
+    [userAPI.reducerPath]: userAPI.reducer,
 })
 
 export const setupStore = () => {
@@ -15,6 +17,7 @@ export const setupStore = () => {
             getDefaultMiddleware()
             .concat(typeAPI.middleware)
             .concat(brandAPI.middleware)
+            .concat(userAPI.middleware)
     })
 }
 

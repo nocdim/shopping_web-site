@@ -26,7 +26,11 @@ class UserController {
             return next(ApiError.badRequest(warnings))
         }
     
-        const { name, email, password, role } = req.body
+        const { name, email, password, confirmPass, role } = req.body
+
+        if (password !== confirmPass) {
+            return next(ApiError.badRequest({1: 'Passwords do not match...'}))
+        }
 
         // Проверяем, есть ли уже зарегестрируемый пользователь с таким же email'ом
         const alreadyCreatedUser = await User.findOne({ where: {email} })

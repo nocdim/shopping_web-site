@@ -8,6 +8,4 @@ exports.registration = [
         .normalizeEmail(),
     check('password', 'Your password should consist of 8+ symbols...')
         .isLength({ min: 8 }),
-    check('confirmPassword', 'Passwords do not match...')
-        .custom((value, { req }) => (value === req.body.password))
 ] 
