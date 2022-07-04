@@ -5,7 +5,6 @@ import { Container } from './styled/BrandItem';
 interface BrandItemProps {
   brand: IBrand;
 }
-// test
 const BrandItem: FC<BrandItemProps> = ({brand}) => {
   return (
     <Container>

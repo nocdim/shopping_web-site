@@ -9,7 +9,7 @@ const Container = styled.div`
     flex-direction: column;
     height: calc(100vh - 2rem);
     span {
-        font-size: 30px;
+        font-size: 27px;
         font-weight: 500;
         padding: 1rem 3rem;
         a {
