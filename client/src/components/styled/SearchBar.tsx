@@ -44,9 +44,9 @@ const Shell = styled.div`
     background-color: #f5f5f5;
     box-shadow: 0px 14px 9px -15px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
-    transition: all 10s ease-in;
+    transition: all 0.2s ease-out;
     &:hover {
-        border: 2px solid #70000067;
+        border: 1px solid #70000067;
     }
 `
 export {
