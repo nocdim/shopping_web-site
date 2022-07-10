@@ -7,7 +7,7 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: calc(100vh - 2rem);
+    height: 100%;
     span {
         font-size: 27px;
         font-weight: 500;
@@ -20,6 +20,8 @@ const Container = styled.div`
 `
 const Footer = styled.div`
     display: flex;
+    position: absolute;
+    top: 900px;
     margin: 0;
     padding: 0;
     align-items: center;

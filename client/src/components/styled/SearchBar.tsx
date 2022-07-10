@@ -26,7 +26,7 @@ const Indicator = styled.div`
 `
 const Container = styled.div`
     display: flex;
-    position: fixed;
+    position: absolute;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -38,7 +38,7 @@ const Shell = styled.div`
     justify-content: space-between;
     align-items: center;
     width: 80%;
-    max-width: 600px;
+    max-width: 900px;
     height: 50px;
     border: 1px dashed #70000067;
     background-color: #f5f5f5;

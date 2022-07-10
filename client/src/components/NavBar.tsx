@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Container, Logo, Menu, MenuLink, Options } from './styled/NavBar'
-import * as Icon from 'react-bootstrap-icons'
 import { useNavigate } from 'react-router-dom'
 import { ABOUT_ROUTE, MAIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE } from '../utils/consts'
 

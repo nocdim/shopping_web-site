@@ -6,11 +6,9 @@ const Container = styled.div<INavbar>`
     width: 100%;
     background-color: white;
     padding: 1.5rem 0rem;
-    display: flex;
-    position: fixed;
     justify-content: space-between;
     align-items: center;
-    display: ${({link}) => (link!.indexOf(REGISTRATION_ROUTE) !== -1 || link!.indexOf(LOGIN_ROUTE) !== -1 ? 'none' : 'flex')};
+    display: flex;
     flex-wrap: wrap;
     border-bottom: 1px solid #0000007f;
 `
@@ -63,10 +61,11 @@ const Menu = styled.div<INavbar>`
     @media (max-width: 1000px) {
         overflow: hidden;
         flex-direction: column;
-        padding: 1rem 0rem 0rem 0rem;
+        padding: ${({ isOpen })=> (isOpen ? "1rem 0rem 0rem 0rem" : "0rem" )};
+        margin: ${({ isOpen })=> (isOpen ? "1rem 0rem 0rem 0rem" : "0rem" )};
         width: 100%;
         max-height: ${({ isOpen })=> (isOpen ? "300px" : "0px" )};
-        transition: max-height 0.3s ease-in;
+        transition: all 0.5s ease-in;
     }
 `
 
