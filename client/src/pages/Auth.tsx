@@ -1,45 +1,49 @@
+import { FetchBaseQueryError } from '@reduxjs/toolkit/dist/query'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Input from '../components/Input'
-import { Container, InfoContainer, Form, Logo } from '../components/styled/Auth'
+import { Container, Form, Logo, ErrorContainer } from '../components/styled/Auth'
 import { IUser } from '../models/IUser'
 import { userAPI } from '../services/UserService'
 import { LOGIN_ROUTE, MAIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE } from '../utils/consts'
 
 const Auth = () => {
+  interface IServerError {
+    message: Array<string>
+  }
+  const [authError, setAuthError] = useState({})
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPass, setConfirmPass] = useState('')
-  const [info, setInfo] = useState<string[]>([])
   const isLogin = window.location.href.substring(21) === LOGIN_ROUTE
   const navigate = useNavigate()
   let link = window.location.href.substring(21)
-  const [createUser, { }] = userAPI.useCreateUserMutation()
+  const [createUser, { error: serverError }] = userAPI.useCreateUserMutation()
   const proceed = async () => {
-    try {
-      if (!isLogin) {
-        await createUser({ name: name, email: email, password: password, confirmPass: confirmPass, role: 'USER' } as IUser)
-          .then(() => setInfo(['Account created successfully!']))
-      }
-      if (isLogin) {
+    if (!isLogin) {
+      await createUser({ name: name, email: email, password: password, confirmPass: confirmPass, role: 'USER' } as IUser)
+    }
+    if (isLogin) {
 
-      }
-    } catch (e) {
-      console.log('bruh')
-      if (e instanceof Error) {
-        setInfo([e.message])
-        console.log('bruh')
-      }
     }
   }
+  console.log(authError)
+  useEffect(() => {
+    if (serverError) {
+      if ('data' in serverError!) {
+        if (serverError.data instanceof Object) {
+          setAuthError(serverError.data) 
+        }
+      }
+    }
+  }, [serverError])
   return (
     <Container>
-      {info && <InfoContainer>
-        {info.map((stuff) => 
-          <div key={stuff}>{stuff}</div>
-        )}
-      </InfoContainer>}
+      {serverError && <ErrorContainer>
+      
+      </ErrorContainer>
+      }
       <Form>
         <Logo onClick={() => navigate(MAIN_ROUTE)}>
           Nokku<span>Shop</span>

@@ -18,7 +18,7 @@ const Container = styled.div`
         }
     }
 `
-const InfoContainer = styled.div`
+const ErrorContainer = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -88,5 +88,5 @@ export {
     Container,
     Logo,
     Form,
-    InfoContainer,
+    ErrorContainer,
 }
