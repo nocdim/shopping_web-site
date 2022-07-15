@@ -25,7 +25,6 @@ const Auth = () => {
 
     }
   }
-  console.log(authError)
   useEffect(() => {
     if (createUserError) {
       if ('data' in createUserError!) {
