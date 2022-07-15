@@ -8,9 +8,6 @@ import { userAPI } from '../services/UserService'
 import { LOGIN_ROUTE, MAIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE } from '../utils/consts'
 
 const Auth = () => {
-  interface IServerError {
-    message: Array<string>
-  }
   const [authError, setAuthError] = useState({})
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -19,7 +16,7 @@ const Auth = () => {
   const isLogin = window.location.href.substring(21) === LOGIN_ROUTE
   const navigate = useNavigate()
   let link = window.location.href.substring(21)
-  const [createUser, { error: serverError }] = userAPI.useCreateUserMutation()
+  const [createUser, { error: createUserError }] = userAPI.useCreateUserMutation()
   const proceed = async () => {
     if (!isLogin) {
       await createUser({ name: name, email: email, password: password, confirmPass: confirmPass, role: 'USER' } as IUser)
@@ -30,19 +27,19 @@ const Auth = () => {
   }
   console.log(authError)
   useEffect(() => {
-    if (serverError) {
-      if ('data' in serverError!) {
-        if (serverError.data instanceof Object) {
-          setAuthError(serverError.data) 
+    if (createUserError) {
+      if ('data' in createUserError!) {
+        if (createUserError.data instanceof Object) {
+          setAuthError(createUserError.data) 
         }
       }
     }
-  }, [serverError])
+  }, [createUserError])
   return (
     <Container>
-      {serverError && <ErrorContainer>
-      
-      </ErrorContainer>
+      {createUserError ?
+      <>{JSON.stringify(authError)}</>
+      : <></>
       }
       <Form>
         <Logo onClick={() => navigate(MAIN_ROUTE)}>
