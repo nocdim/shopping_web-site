@@ -2,12 +2,11 @@ import styled from "styled-components"
 
 const Container = styled.div`
     display: flex;
+    align-items: center;
     margin: 0;
     padding: 0;
-    align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 100%;
     h2 {
         color: #808080;
         font-weight: bold;
@@ -23,18 +22,28 @@ const ErrorContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 2rem;
+`
+const ErrorMessage = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         max-width: 700px;
         min-width: calc(350px + 4rem);
-        height: 60px;
+        height: 40px;
         border: none;
         outline: none;
         font-size: 18px;
-        margin: 1rem 0;
+        margin: 0.5rem 0 0.5rem 0;
         box-shadow: 0px 14px 9px -15px rgba(0, 0, 0, 0.25);
         border-radius: 8px;
-        background-color: #70edb9;
-        color: #505050;
+        background-color: #ed7070;
+        color: #000000;
         cursor: pointer;
         transition: all 0.2s ease-in;
         &:hover {
@@ -89,4 +98,5 @@ export {
     Logo,
     Form,
     ErrorContainer,
+    ErrorMessage
 }

@@ -2,7 +2,7 @@ import { FetchBaseQueryError } from '@reduxjs/toolkit/dist/query'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Input from '../components/Input'
-import { Container, Form, Logo, ErrorContainer } from '../components/styled/Auth'
+import { Container, Form, Logo, ErrorContainer, ErrorMessage } from '../components/styled/Auth'
 import { IUser } from '../models/IUser'
 import { userAPI } from '../services/UserService'
 import { LOGIN_ROUTE, MAIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE } from '../utils/consts'
@@ -29,17 +29,22 @@ const Auth = () => {
     if (createUserError) {
       if ('data' in createUserError!) {
         if (createUserError.data instanceof Object) {
-          setAuthError(createUserError.data) 
+          setAuthError(createUserError.data)
         }
       }
     }
   }, [createUserError])
   return (
     <Container>
-      {createUserError ?
-      <>{JSON.stringify(authError)}</>
-      : <></>
-      }
+      <ErrorContainer>
+        {authError &&
+          Object(authError).message?.map((error: any) =>
+            <ErrorMessage key={error}>
+              <div>{error}</div>
+            </ErrorMessage>
+          )
+        }
+      </ErrorContainer>
       <Form>
         <Logo onClick={() => navigate(MAIN_ROUTE)}>
           Nokku<span>Shop</span>
