@@ -1,14 +1,15 @@
 import styled from "styled-components"
 import { INavbar } from "../../models/INavbar";
-import { LOGIN_ROUTE, REGISTRATION_ROUTE } from '../../utils/consts';
+import { MAIN_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE } from '../../utils/consts';
 
 const Container = styled.div<INavbar>`
     width: 100%;
     background-color: white;
     padding: 1.5rem 0rem;
+    position: absolute;
     justify-content: space-between;
     align-items: center;
-    display: flex;
+    display: ${({ link }) => (link === MAIN_ROUTE ? "none" : "flex" )};
     flex-wrap: wrap;
     border-bottom: 1px solid #0000007f;
 `

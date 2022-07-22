@@ -8,6 +8,7 @@ const NavBar: React.FC = () => {
     let link = window.location.href.substring(21)
     const navigate = useNavigate()
 
+    console.log(link)
     return (
         <Container link={link}>
             <Logo onClick={() => navigate(MAIN_ROUTE)}>

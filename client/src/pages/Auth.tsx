@@ -20,6 +20,7 @@ const Auth = () => {
   const proceed = async () => {
     if (!isLogin) {
       await createUser({ name: name, email: email, password: password, confirmPass: confirmPass, role: 'USER' } as IUser)
+      
     }
     if (isLogin) {
 
